@@ -7,9 +7,8 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="testBean"
-          class="dev.TestBean">
-        <constructor-arg value="Shuha"/>
+    <bean id="transportBean"
+          class="dev.Bike">
     </bean>
 
 </beans>
