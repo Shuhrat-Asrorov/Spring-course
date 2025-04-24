@@ -7,10 +7,8 @@ public class SpringTest {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationContext.xml"
         );
-        Transport transport = context.getBean("transportBean", Transport.class);
 
-        HumanWithTransport humanWithTransport = new HumanWithTransport(transport);
-
+        HumanWithTransport humanWithTransport = context.getBean("HumanWithTransportBean", HumanWithTransport.class);
         humanWithTransport.MoveHuman();
 
         context.close();
