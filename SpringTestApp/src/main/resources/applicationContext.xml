@@ -8,12 +8,15 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="transportBean"
-          class="dev.Car">
+          class="dev.Moto">
     </bean>
 
     <bean id="HumanWithTransportBean"
           class="dev.HumanWithTransport">
-        <constructor-arg ref="transportBean"/>
+<!--        <constructor-arg ref="transportBean"/>-->
+        <property name="transport" ref="transportBean"/>
+
+        <property name="stamina" value="75"/>
     </bean>
 
 </beans>

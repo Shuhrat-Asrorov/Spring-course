@@ -11,6 +11,8 @@ public class SpringTest {
         HumanWithTransport humanWithTransport = context.getBean("HumanWithTransportBean", HumanWithTransport.class);
         humanWithTransport.MoveHuman();
 
+        System.out.println("Stamina: " + humanWithTransport.getStamina());
+
         context.close();
     }
 }
