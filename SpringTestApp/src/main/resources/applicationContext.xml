@@ -12,8 +12,9 @@
     </bean>
 
     <bean id="HumanWithTransportBean"
-          class="dev.HumanWithTransport">
-<!--        <constructor-arg ref="transportBean"/>-->
+          class="dev.HumanWithTransport"
+          scope="prototype">
+        <constructor-arg ref="transportBean"/>
         <property name="transport" ref="transportBean"/>
 
         <property name="stamina" value="75"/>
