@@ -30,6 +30,8 @@ public class HumanWithTransport{
         System.out.println("I'm " + transport.move());
     }
 
-
+    public void doMyInit(){
+        System.out.println("Init from Human");
+    }
 
 }

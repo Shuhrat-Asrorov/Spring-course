@@ -8,15 +8,16 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="transportBean"
-          class="dev.Moto">
+          class="dev.Moto"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"
+          factory-method="getMoto">
     </bean>
 
-    <bean id="HumanWithTransportBean"
-          class="dev.HumanWithTransport"
-          scope="prototype">
+    <bean id="humanWithTransportBean"
+          class="dev.HumanWithTransport">
         <constructor-arg ref="transportBean"/>
         <property name="transport" ref="transportBean"/>
-
         <property name="stamina" value="75"/>
     </bean>
 

@@ -8,21 +8,9 @@ public class SpringTest {
                 "applicationContext.xml"
         );
 
-        HumanWithTransport humanWithTransport = context.getBean("HumanWithTransportBean", HumanWithTransport.class);
-        HumanWithTransport humanWithTransport1 = context.getBean("HumanWithTransportBean", HumanWithTransport.class);
-        HumanWithTransport humanWithTransport2 = context.getBean("HumanWithTransportBean", HumanWithTransport.class);
+        HumanWithTransport humanWithTransport = context.getBean("humanWithTransportBean", HumanWithTransport.class);
 
-        humanWithTransport.setStamina(100);
-        humanWithTransport1.setStamina(100);
-        humanWithTransport2.setStamina(100);
-
-        System.out.println(humanWithTransport1);
-        System.out.println(humanWithTransport2);
-        System.out.println(humanWithTransport.equals(humanWithTransport1));
-
-        System.out.println("Stamina: " + humanWithTransport.getStamina());
-        System.out.println("Stamina: " + humanWithTransport1.getStamina());
-        System.out.println("Stamina: " + humanWithTransport2.getStamina());
+        Moto moto = context.getBean("transportBean", Moto.class);
 
         context.close();
     }
