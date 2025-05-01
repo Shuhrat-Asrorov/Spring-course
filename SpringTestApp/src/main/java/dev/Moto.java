@@ -1,5 +1,8 @@
 package dev;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Moto implements Transport{
     private Moto(){}
 

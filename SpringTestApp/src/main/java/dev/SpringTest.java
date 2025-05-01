@@ -8,9 +8,15 @@ public class SpringTest {
                 "applicationContext.xml"
         );
 
-        HumanWithTransport humanWithTransport = context.getBean("humanWithTransportBean", HumanWithTransport.class);
+        HumanWithTransport humanWithTransport = context.getBean("humanWithTransport", HumanWithTransport.class);
 
-        Moto moto = context.getBean("transportBean", Moto.class);
+        Transport transport = context.getBean("bike", Transport.class);
+
+        humanWithTransport.setStamina(100);
+        humanWithTransport.setTransport(transport);
+
+        humanWithTransport.moveHuman();
+        System.out.println(humanWithTransport.getStamina());
 
         context.close();
     }

@@ -1,5 +1,8 @@
 package dev;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class HumanWithTransport{
     private Transport transport;
     private int stamina;
@@ -26,7 +29,7 @@ public class HumanWithTransport{
     public HumanWithTransport(){
     }
 
-    public void MoveHuman(){
+    public void moveHuman(){
         System.out.println("I'm " + transport.move());
     }
 
