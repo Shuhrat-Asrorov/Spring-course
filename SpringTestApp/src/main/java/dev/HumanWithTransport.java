@@ -1,40 +1,29 @@
 package dev;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class HumanWithTransport{
-    private Transport transport;
-    private int stamina;
+    private Car car;
+    private Moto moto;
+    @Autowired
+    private Bike bike;
 
-    public void setTransport(Transport transport){
-        this.transport = transport;
+    @Autowired
+    public void setMoto(Moto moto) {
+        this.moto = moto;
     }
 
-    public void setStamina(int stamina){
-        this.stamina = stamina;
-    }
 
-    public Transport getTransport() {
-        return transport;
-    }
-
-    public int getStamina() {
-        return stamina;
-    }
-
-    public HumanWithTransport(Transport transport){
-        this.transport = transport;
-    }
-    public HumanWithTransport(){
+    @Autowired
+    public HumanWithTransport(Car car){
+        this.car = car;
     }
 
     public void moveHuman(){
-        System.out.println("I'm " + transport.move());
+        System.out.println("I " + bike.move());
+        System.out.println("I " + car.move());
+        System.out.println("I " + moto.move());
     }
-
-    public void doMyInit(){
-        System.out.println("Init from Human");
-    }
-
 }
