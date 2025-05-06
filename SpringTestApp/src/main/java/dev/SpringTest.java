@@ -1,11 +1,10 @@
 package dev;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class SpringTest {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-                "applicationContext.xml");
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
 
         HumanWithTransport human = context.getBean("humanWithTransport", HumanWithTransport.class);
         HumanWithTransport human1 = context.getBean("humanWithTransport", HumanWithTransport.class);
@@ -14,6 +13,7 @@ public class SpringTest {
         human1.setAge(50);
 
         System.out.println(human.getAge());
+        System.out.println(human.getName());
         System.out.println(human1.getAge());
 
 

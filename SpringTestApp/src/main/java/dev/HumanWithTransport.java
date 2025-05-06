@@ -14,6 +14,8 @@ import javax.annotation.PreDestroy;
 public class HumanWithTransport{
     @Value("25")
     private int age;
+    @Value("${HumanWithTransport.name}")
+    private String name;
     private Transport transport;
 
     public int getAge() {
@@ -22,6 +24,10 @@ public class HumanWithTransport{
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public String getName(){
+        return name;
     }
 
     @Autowired
